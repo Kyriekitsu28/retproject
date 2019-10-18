@@ -1,0 +1,15 @@
+h1 {
+    color:  rgb(189, 10, 40);
+  }
+ h1 {
+     text-shadow: 2px 2px #FF0000;
+ }
+
+
+  html {
+    background-image: url("https://www.goodfreephotos.com/cache/animals/mammals/fox-silhouette.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 1200px 700px;
+  }
+  
