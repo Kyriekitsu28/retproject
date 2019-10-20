@@ -4,7 +4,9 @@ h1 {
  h1 {
      text-shadow: 2px 2px #FF0000;
  }
-
+div.c {
+    text-align: center;
+}
 
   html {
     background-image: url("https://www.goodfreephotos.com/cache/animals/mammals/fox-silhouette.jpg");
