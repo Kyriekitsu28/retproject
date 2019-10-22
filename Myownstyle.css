@@ -9,9 +9,14 @@ div.c {
 }
 
   html {
-    background-image: url("https://www.goodfreephotos.com/cache/animals/mammals/fox-silhouette.jpg");
+    background-image: url("https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: 1400px 700px;
   }
+
+  #myCanvas {
+    border: 1px solid black;
+  }
+  
  
