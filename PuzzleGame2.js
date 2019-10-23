@@ -1,12 +1,36 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
+var spriteSheet = new Image();
+spriteSheet.src = "NCBomb.gif";
+
+spriteSheet.onload = function() {
+  var imgWidth = spriteSheet.width;
+  var imgHeight = spriteSheet.height;
+  var numberOfRows = 2;
+  var numberOfColumns = 2;
+  //first frame goes from 0,0
+  
+  // frame width = image width / columns
+  // frame height = image height / rows
+  var sx = 0;
+  var sy = 0;
+  var frameWidth = imgWidth / numberOfColumns;
+  var frameHeight = imgHeight / numberOfRows;
+  
+  console.log(imgWidth);
+
+  //Change dimentions of gif (it flashes)
+
+  ctx.drawImage(spriteSheet, sx, sy, frameWidth, frameHeight, 0, 0, 116, 116);
+
+}
 
 var player = {
-
+    sprit: new Sprite('NCBomb.gif', [0,0], [39, 39], 16, [0, 1]),
     'pos_x': 0,
     'pos_y': 0,
-    'unit_size': 5,
+    'unit_size': 100,
     'color': "#ff0000",
     'draw': function() {
         ctx.fillStyle = "#FF0000";
