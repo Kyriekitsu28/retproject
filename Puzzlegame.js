@@ -4,7 +4,7 @@ var ctx = c.getContext("2d");
 //https://iceaxeliehne.github.io/RETDemo/spinningBall.png
 
 var spriteSheet = new Image();
-spriteSheet.src = "https://iceaxeliehne.github.io/RETDemo/spinningBall.png";
+spriteSheet.src = "NCBomb.gif";
 
 spriteSheet.onload = function() {
   var imgWidth = spriteSheet.width;
