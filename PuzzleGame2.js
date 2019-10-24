@@ -2,7 +2,7 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
 var spriteSheet = new Image();
-spriteSheet.src = "NCBomb.gif";
+spriteSheet.src = "Images/ChocBomb.png";
 
 spriteSheet.onload = function() {
   var imgWidth = spriteSheet.width;
@@ -25,9 +25,19 @@ spriteSheet.onload = function() {
   ctx.drawImage(spriteSheet, sx, sy, frameWidth, frameHeight, 0, 0, 116, 116);
 
 }
+var spritesheet = {
+    'pos_x': 0,
+    'pos_y': 0,
+'imagePath': "Images/ChocBomb.png", 
+    "numberOfRows":  2, 
+    "numberOfColumns":  2,
+
+
+
+};
 
 var player = {
-    sprit: new Sprite('NCBomb.gif', [0,0], [39, 39], 16, [0, 1]),
+    
     'pos_x': 0,
     'pos_y': 0,
     'unit_size': 100,
@@ -77,7 +87,7 @@ setInterval(updateGamestate, 1000 / 25);
 
 function updateGamestate() {
     ctx.clearRect(0, 0, c.clientWidth, c.height);
-        player.draw();
+       //player.draw();
 }
 
 
