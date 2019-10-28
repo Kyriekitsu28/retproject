@@ -50,7 +50,7 @@ var player = {
 
 document.addEventListener("keypress", function (event) {
     //log the keyword to the console
-    console.log(event.keyCode);
+    console.log(event.keyCode); 
     
     //check if user has pressed 's' meaning 'down'
     if (event.keyCode == 115) {
