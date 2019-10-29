@@ -1,0 +1,23 @@
+h1 {
+    color:  rgb(224, 50, 152);
+  }
+ h1 {
+     text-shadow: 2px 2px rgb(233, 46, 208);
+ }
+div.c {
+    text-align: center;
+}
+
+  html {
+    background-image: url("https://previews.123rf.com/images/vladnikon/vladnikon1810/vladnikon181000360/109633695-abstract-fractal-background-abstract-painting-multicolor-texture-motion-holiday-background-modern-mu.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 1400px 700px;
+  }
+
+  
+  #myCanvas {
+    border: 1px solid black;
+  }
+  
+ 

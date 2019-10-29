@@ -9,12 +9,20 @@ div.c {
 }
 
   html {
+    class="home-bg";
     background-image: url("https://cdn.pixabay.com/photo/2019/10/19/11/35/wolf-4561204_960_720.png");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: 1400px 700px;
   }
 
+  html {
+    class="game-bg";
+    background-image: url("https://pixabay.com/photos/milky-way-starry-sky-night-sky-star-2695569/");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 1400px 700px;
+  }
   #myCanvas {
     border: 1px solid black;
   }
