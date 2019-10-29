@@ -37,7 +37,13 @@ var spritesheet = {
 };
 
 var player = {
-    
+    'spriteSheetImage': 'Images/ChocBomb.png',
+    'frame_number': 1, // current frame of spritesheet being displayed
+    'number_of_frames': 6, // number of animation frames on the spritesheet
+    'numberOfRows': 3, // on the spritesheet
+    'numberOfColumns': 2, // on the spritesheet
+    'sx': 0, // this is the coordinate of the animation frame on the spritesheet
+    'sy': 0,
     'pos_x': 0,
     'pos_y': 0,
     'unit_size': 100,
