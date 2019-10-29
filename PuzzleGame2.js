@@ -18,7 +18,7 @@ spriteSheet.onload = function() {
   var frameWidth = imgWidth / numberOfColumns;
   var frameHeight = imgHeight / numberOfRows;
   
-  console.log(imgWidth);
+  //console.log(imgWidth);
 
   //Change dimentions of gif (it flashes)
 
@@ -28,7 +28,7 @@ spriteSheet.onload = function() {
 var spritesheet = {
     'pos_x': 0,
     'pos_y': 0,
-'imagePath': "Images/ChocBomb.png", 
+    'imagePath': "Images/ChocBomb.png", 
     "numberOfRows":  2, 
     "numberOfColumns":  2,
 
@@ -38,21 +38,71 @@ var spritesheet = {
 
 var player = {
     'spriteSheetImage': 'Images/ChocBomb.png',
-    'frame_number': 1, // current frame of spritesheet being displayed
-    'number_of_frames': 6, // number of animation frames on the spritesheet
-    'numberOfRows': 3, // on the spritesheet
-    'numberOfColumns': 2, // on the spritesheet
-    'sx': 0, // this is the coordinate of the animation frame on the spritesheet
+    'frame_number': 1, 
+    'number_of_frames': 6, 
+    'numberOfRows': 3, 
+    'numberOfColumns': 2, 
+    'sx': 0, 
     'sy': 0,
+    'canDraw': false,
     'pos_x': 0,
     'pos_y': 0,
-    'unit_size': 100,
+    'unit_size': 75,
     'color': "#ff0000",
-    'draw': function() {
-        ctx.fillStyle = "#FF0000";
-        ctx.fillRect(this.pos_x, this.pos_y, this.unit_size, this.unit_size);
+    'start': function() {
+        console.log ('draw');
+        this.sprite = new Image();
+        this.sprite.src = this.spriteSheetImage;
+        this.sprite.onload = imageLoaded;
     },
+    'draw': function() {
+        
+        ctx.fillStyle = "#FF0000";
+        if (this.canDraw) {
+            
+        ctx.drawImage(this.sprite, this.sx, this.sy, this.frameWidth, this.frameHeight, this.pos_x, this.pos_y, this.unit_size, this.unit_size)
+        }
+    },
+    'update': function() {
+        if (this.move_down) {
+            this.pos_y += 1;
+            this.move_down = false;
+        }
+        if (this.prev_x != this.pos_x || this.pos_y) {
+            this.fame_number ++;
+            if (this.frame_number == this.number_of_frames) {
+                this.frame_number = 0;
+            }
+    
+        }
+    
+        if (this.stop_animation) { 
+            this.frame_number = 0; 
+            this.stop_animation = false; 
+        }
+    
+            this.sx = (this.frame_number % this.numberOfColumns) * this.frameWidth; 
+            this.sy = Math.floor(this.frame_number / this.numberOfRows) * this.frameHeight;
+    
+            this.prev_x = this.pos_x; 
+            this.prev_y = this.pos_y;
+        },
 };
+
+
+
+
+function imageLoaded() {
+    
+    var imgWidth = player.sprite.width;
+    var imgHeight = player.sprite.height;
+    player.frameWidth = imgWidth / player.numberOfColumns;
+    player.frameHeight = imgHeight / player.numberOfRows;
+    player.canDraw = true;
+};
+
+player.start();
+
 
 document.addEventListener("keypress", function (event) {
     //log the keyword to the console
@@ -93,7 +143,8 @@ setInterval(updateGamestate, 1000 / 25);
 
 function updateGamestate() {
     ctx.clearRect(0, 0, c.clientWidth, c.height);
-       //player.draw();
+    player.update();  
+    player.draw();
 }
 
 
